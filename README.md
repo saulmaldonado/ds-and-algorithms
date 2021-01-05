@@ -15,7 +15,7 @@
   <summary>Linked Lists</summary>
     <ul>
       <li>
-  <a href="linked-lists/Merge Two Sorted Lists">
+  <a href="linked-lists/merge-two-sorted-lists">
     Merge Two Sorted Lists
   </a>
 </li>
@@ -24,7 +24,7 @@
   <summary>Strings</summary>
     <ul>
       <li>
-  <a href="strings/Longest Common Prefix">
+  <a href="strings/longest-common-prefix">
     Longest Common Prefix
   </a>
 </li>
@@ -33,7 +33,7 @@
   <summary>Binary Trees</summary>
     <ul>
       <li>
-  <a href="binary-trees/Find A Corresponding Node Of A Binary Tree In A Clone Of That Tree">
+  <a href="binary-trees/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree">
     Find A Corresponding Node Of A Binary Tree In A Clone Of That Tree
   </a>
 </li>
