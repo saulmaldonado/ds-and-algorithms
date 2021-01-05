@@ -4,7 +4,7 @@ import re
 
 path_to_template = "./README-TEMPLATE.md"
 problem_template = """<li>
-  <a href="{1}/{0}">
+  <a href="{2}/{1}">
     {0}
   </a>
 </li>"""
@@ -72,7 +72,9 @@ for topic in problems_per_topic:
     list_of_problems = problems_per_topic[topic]
     all_problems_for_topic = reduce(
         lambda html, problem: html
-        + problem_template.format(problem, to_kebab_case(topic)),
+        + problem_template.format(
+            problem, to_kebab_case(problem), to_kebab_case(topic)
+        ),
         list_of_problems,
         "",
     )
