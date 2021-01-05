@@ -4,7 +4,7 @@ import re
 
 path_to_template = "./README-TEMPLATE.md"
 problem_template = """<li>
-  <a href="topic/{0}">
+  <a href="{1}/{0}">
     {0}
   </a>
 </li>"""
@@ -16,7 +16,7 @@ topic_template = """<details>
     </ul>
 </details>"""
 
-dirs_to_exclude = [".git"]
+dirs_to_exclude = [".git", ".github"]
 
 data = []
 readme_template = ""
@@ -30,6 +30,13 @@ def to_title_case(str):
         return str
     new_str = re.sub("-", " ", str)
     return re.sub(r"\b\w", lambda match: match.group(0).upper(), new_str)
+
+
+def to_kebab_case(str):
+    if len(str) == 0:
+        return str
+    new_str = re.sub(r"\b\w", lambda match: match.group(0).lower(), str)
+    return re.sub(r"\W", "-", new_str)
 
 
 for dir in dirs:
@@ -64,7 +71,8 @@ problemsHTML = ""
 for topic in problems_per_topic:
     list_of_problems = problems_per_topic[topic]
     all_problems_for_topic = reduce(
-        lambda html, problem: html + problem_template.format(problem),
+        lambda html, problem: html
+        + problem_template.format(problem, to_kebab_case(topic)),
         list_of_problems,
         "",
     )
