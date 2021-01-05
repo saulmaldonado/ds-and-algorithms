@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-2-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-3-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -26,6 +26,15 @@
       <li>
   <a href="strings/Longest Common Prefix">
     Longest Common Prefix
+  </a>
+</li>
+    </ul>
+</details><details>
+  <summary>Binary Trees</summary>
+    <ul>
+      <li>
+  <a href="binary-trees/Find A Corresponding Node Of A Binary Tree In A Clone Of That Tree">
+    Find A Corresponding Node Of A Binary Tree In A Clone Of That Tree
   </a>
 </li>
     </ul>
