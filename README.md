@@ -1,19 +1,28 @@
 # Data Structures and Algorithm Problems Using JavaScript, TypeScript, Go and Java
 
-![repo-stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
-![github-followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
-![last-commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
+![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
+![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
+![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-1-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
 ## 📊 Organized by topic:
 
-<details>
-  <summary>TBD</summary>
+<div>
   <ul>
-    <li>TBD</li>
-  </ul>
+    <details>
+  <summary>Strings</summary>
+    <ul>
+      <li>
+  <a href="strings/Longest Common Prefix">
+    Longest Common Prefix
+  </a>
+</li>
+    </ul>
 </details>
+  </ul>
+</div>
 
 ---
 
