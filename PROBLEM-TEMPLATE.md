@@ -33,8 +33,8 @@ Detailed example
 
 Solution files must have the same named as the problem formatted into `kebab-case`
 
-- [JavaScript](/title.js)
-- [TypeScript](/title.ts)
-- [Java](/title.java)
-- [Go](/title.go)
+- [JavaScript](./title.js)
+- [TypeScript](./title.ts)
+- [Java](./title.java)
+- [Go](./title.go)
 </details>
