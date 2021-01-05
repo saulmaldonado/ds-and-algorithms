@@ -6,7 +6,7 @@ path_to_template = "./README-TEMPLATE.md"
 problem_template = """<li>
   <a href="{2}/{1}">
     {0}
-  </a>
+  </a> - {3}
 </li>"""
 
 topic_template = """<details>
@@ -21,8 +21,6 @@ dirs_to_exclude = [".git", ".github"]
 data = []
 readme_template = ""
 problems_count = 0
-
-dirs = os.listdir(os.getcwd())
 
 
 def to_title_case(str):
@@ -39,18 +37,12 @@ def to_kebab_case(str):
     return re.sub(r"\W", "-", new_str)
 
 
-for dir in dirs:
-    if not os.path.isdir(dir) or dir in dirs_to_exclude:
-        continue
-
-    problems = os.listdir(os.path.join(os.getcwd(), dir))
-
-    for problem in problems:
-        p_map = {"name": to_title_case(problem), "topic": to_title_case(dir)}
-        data.append(p_map)
-
-with open(path_to_template) as template_file:
-    readme_template = template_file.read()
+def get_difficulty(dir):
+    with open(dir) as p:
+        match = re.search(r"(?<=!\[)\w+(?=\])", p.read())
+        if match == None:
+            return ""
+        return match.group(0)
 
 
 def map_problem(map, problem):
@@ -59,9 +51,31 @@ def map_problem(map, problem):
     key = problem["topic"]
     if key not in map:
         map[key] = []
-    map[key].append(problem["name"])
+    map[key].append((problem["name"], problem["diff"]))
     problems_count += 1
     return map
+
+
+dirs = os.listdir(os.getcwd())
+
+
+for dir in dirs:
+    if not os.path.isdir(dir) or dir in dirs_to_exclude:
+        continue
+
+    problems = os.listdir(os.path.join(os.getcwd(), dir))
+
+    for problem in problems:
+        diff = get_difficulty(os.path.join(os.getcwd(), dir, problem, "README.md"))
+        p_map = {
+            "name": to_title_case(problem),
+            "topic": to_title_case(dir),
+            "diff": diff,
+        }
+        data.append(p_map)
+
+with open(path_to_template) as template_file:
+    readme_template = template_file.read()
 
 
 problems_per_topic = reduce(map_problem, data, {})
@@ -73,7 +87,7 @@ for topic in problems_per_topic:
     all_problems_for_topic = reduce(
         lambda html, problem: html
         + problem_template.format(
-            problem, to_kebab_case(problem), to_kebab_case(topic)
+            problem[0], to_kebab_case(problem[0]), to_kebab_case(topic), problem[1]
         ),
         list_of_problems,
         "",
