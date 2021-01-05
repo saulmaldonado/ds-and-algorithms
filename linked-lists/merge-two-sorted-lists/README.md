@@ -1,6 +1,6 @@
 # Merge Two Sorted Lists
 
-![difficulty](https://img.shields.io/badge/easy-5cb85c?style=for-the-badge&logoColor=white)
+![Easy](https://img.shields.io/badge/easy-5cb85c?style=for-the-badge&logoColor=white)
 
 ## Problem:
 
