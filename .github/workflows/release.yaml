@@ -1,0 +1,21 @@
+name: Release
+
+on:
+  release:
+    branches: [published]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate new README.md
+        run: python3 generate_readme.md
+
+      - name: Commit and push new README
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -am 'chore: Update README with new problem'
+          git push
