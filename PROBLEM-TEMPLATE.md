@@ -2,11 +2,11 @@
 
 ## Choose Difficulty
 
-![difficulty](https://img.shields.io/badge/easy-5cb85c?style=for-the-badge&logoColor=white)
+![easy](https://img.shields.io/badge/easy-5cb85c?style=for-the-badge&logoColor=white)
 
-![difficulty](https://img.shields.io/badge/medium-ef6c00?style=for-the-badge&logoColor=white)
+![medium](https://img.shields.io/badge/medium-ef6c00?style=for-the-badge&logoColor=white)
 
-![difficulty](https://img.shields.io/badge/hard-d9534f?style=for-the-badge&logoColor=white)
+![hard](https://img.shields.io/badge/hard-d9534f?style=for-the-badge&logoColor=white)
 
 ## Problem:
 
