@@ -31,7 +31,7 @@ Detailed example
 <details>
   <summary>Solutions (Click to expand)</summary>
 
-Solution files must have the same named as the problem formatted into `kebab-case`
+### Explanation
 
 - [JavaScript](./title.js)
 - [TypeScript](./title.ts)
