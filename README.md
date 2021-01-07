@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-3-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-4-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -12,12 +12,21 @@
 <div>
   <ul>
     <details>
+  <summary>Arrays</summary>
+    <ul>
+      <li>
+  <a href="arrays/kth-missing-positive-number">
+    Kth Missing Positive Number
+  </a> - easy
+</li>
+    </ul>
+</details><details>
   <summary>Linked Lists</summary>
     <ul>
       <li>
   <a href="linked-lists/merge-two-sorted-lists">
     Merge Two Sorted Lists
-  </a>
+  </a> - Easy
 </li>
     </ul>
 </details><details>
@@ -26,7 +35,7 @@
       <li>
   <a href="strings/longest-common-prefix">
     Longest Common Prefix
-  </a>
+  </a> - Easy
 </li>
     </ul>
 </details><details>
@@ -35,7 +44,7 @@
       <li>
   <a href="binary-trees/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree">
     Find A Corresponding Node Of A Binary Tree In A Clone Of That Tree
-  </a>
+  </a> - Easy
 </li>
     </ul>
 </details>
