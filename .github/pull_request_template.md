@@ -14,7 +14,7 @@ _problem description_
 
 ## README
 
-- [ ] Follows [PROBLEM-TEMPLATE](../../PROBLEM_TEMPLATE.md)
+- [ ] Follows [PROBLEM-TEMPLATE](https://github.com/saulmaldonado/ds-and-algorithms/blob/main/PROBLEM-TEMPLATE.md)
 
 ## Solutions
 
