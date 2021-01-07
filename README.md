@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-4-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-5-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -18,6 +18,10 @@
   <a href="arrays/kth-missing-positive-number">
     Kth Missing Positive Number
   </a> - easy
+</li><li>
+  <a href="arrays/sum-of-absolute-differences-in-a-sorted-array">
+    Sum Of Absolute Differences In A Sorted Array
+  </a> - Medium
 </li>
     </ul>
 </details><details>
