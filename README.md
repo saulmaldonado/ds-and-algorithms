@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-7-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-8-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -48,6 +48,15 @@
   <a href="strings/longest-substring-without-repeating-characters">
     Longest Substring Without Repeating Characters
   </a> - Medium
+</li>
+    </ul>
+</details><details>
+  <summary>Dynamic Programming</summary>
+    <ul>
+      <li>
+  <a href="dynamic-programming/cherry-pickup-ii">
+    Cherry Pickup Ii
+  </a> - Hard
 </li>
     </ul>
 </details><details>
