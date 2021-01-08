@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-8-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-9-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -48,6 +48,10 @@
   <a href="strings/longest-substring-without-repeating-characters">
     Longest Substring Without Repeating Characters
   </a> - Medium
+</li><li>
+  <a href="strings/check-if-two-string-arrays-are-equivalent">
+    Check If Two String Arrays Are Equivalent
+  </a> - Easy
 </li>
     </ul>
 </details><details>
