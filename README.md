@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-13-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-14-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -61,6 +61,15 @@
       <li>
   <a href="linked-lists/merge-two-sorted-lists">
     Merge Two Sorted Lists
+  </a> - Easy
+</li>
+    </ul>
+</details><details>
+  <summary>Stacks</summary>
+    <ul>
+      <li>
+  <a href="stacks/valid-parentheses">
+    Valid Parentheses
   </a> - Easy
 </li>
     </ul>
