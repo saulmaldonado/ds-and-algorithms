@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-11-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-12-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -34,6 +34,15 @@
       <li>
   <a href="backtracking/sudoku-solver">
     Sudoku Solver
+  </a> - Hard
+</li>
+    </ul>
+</details><details>
+  <summary>Breadth First Search</summary>
+    <ul>
+      <li>
+  <a href="breadth-first-search/word-ladder">
+    Word Ladder
   </a> - Hard
 </li>
     </ul>
