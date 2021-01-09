@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-10-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-11-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -26,6 +26,15 @@
   <a href="arrays/sum-of-absolute-differences-in-a-sorted-array">
     Sum Of Absolute Differences In A Sorted Array
   </a> - Medium
+</li>
+    </ul>
+</details><details>
+  <summary>Backtracking</summary>
+    <ul>
+      <li>
+  <a href="backtracking/sudoku-solver">
+    Sudoku Solver
+  </a> - Hard
 </li>
     </ul>
 </details><details>
