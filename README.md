@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-17-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-18-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -39,6 +39,10 @@
   <a href="arrays/create-sorted-array-through-instructions">
     Create Sorted Array Through Instructions
   </a> - Hard
+</li><li>
+  <a href="arrays/merge-sorted-array">
+    Merge Sorted Array
+  </a> - Easy
 </li>
     </ul>
 </details><details>
