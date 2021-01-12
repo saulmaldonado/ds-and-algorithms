@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-22-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-23-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -116,6 +116,10 @@
   <a href="strings/check-if-two-string-arrays-are-equivalent">
     Check If Two String Arrays Are Equivalent
   </a> - Easy
+</li><li>
+  <a href="strings/longest-valid-parentheses">
+    Longest Valid Parentheses
+  </a> - Hard
 </li>
     </ul>
 </details><details>
