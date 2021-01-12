@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-23-green)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-24-green)
 
 > Data structures and algorithm problems with solution implementations for different languages
 
@@ -148,6 +148,10 @@
   <summary>Math</summary>
     <ul>
       <li>
+  <a href="math/palindrome-number">
+    Palindrome Number
+  </a> - Easy
+</li><li>
   <a href="math/reverse-integer">
     Reverse Integer
   </a> - Easy
