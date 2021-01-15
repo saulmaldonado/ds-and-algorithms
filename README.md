@@ -98,10 +98,6 @@
     Kth Missing Positive Number
   </a> - easy
 </li><li>
-  <a href="arrays/get-maximum-in-generated-array">
-    Get Maximum In Generated Array
-  </a> - Easy
-</li><li>
   <a href="arrays/boats-to-save-people">
     Boats To Save People
   </a> - Medium
@@ -160,6 +156,10 @@
   <a href="dynamic-programming/cherry-pickup-ii">
     Cherry Pickup Ii
   </a> - Hard
+</li><li>
+  <a href="dynamic-programming/get-maximum-in-generated-array">
+    Get Maximum In Generated Array
+  </a> - Easy
 </li><li>
   <a href="dynamic-programming/maximal-square">
     Maximal Square
