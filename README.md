@@ -122,10 +122,6 @@
     Kth Largest Element In An Array
   </a> - Medium
 </li><li>
-  <a href="arrays/remove-element">
-    Remove Element
-  </a> - Easy
-</li><li>
   <a href="arrays/search-in-rotated-array">
     Search In Rotated Array
   </a> - Medium
@@ -140,6 +136,10 @@
 </li><li>
   <a href="arrays/merge-sorted-array">
     Merge Sorted Array
+  </a> - Easy
+</li><li>
+  <a href="arrays/remove-elements">
+    Remove Elements
   </a> - Easy
 </li>
     </ul>
