@@ -1,11 +1,12 @@
 name: Release
 
 on:
-  release:
-    types: [published]
+  pull_request:
+    types: [closed]
 
 jobs:
   release:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,3 +21,9 @@ jobs:
           git add .
           git commit -m 'chore: Update README with new problem'
           git push origin HEAD:main
+
+      - name: Create new release
+        run: |
+          python3 release.py
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
