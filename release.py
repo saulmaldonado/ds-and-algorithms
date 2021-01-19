@@ -17,7 +17,7 @@ class PullRequest:
             self.type, self.title = self.__get_ref()
 
     def __get_ref(self) -> str:
-        ref = self.event.pull_request.head.ref
+        ref = self.event["pull_request"]["head"]["ref"]
         match = re.match("(feat|fix)\/(.+)", ref)
         if match == None:
             raise Exception(

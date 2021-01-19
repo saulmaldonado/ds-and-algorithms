@@ -2,7 +2,7 @@
 
 ## Difficulty
 
-![Medium](https://img.shields.io/badge/medium-ef6c00?style=for-the-badge&logoColor=white)
+![Easy](https://img.shields.io/badge/easy-5cb85c?style=for-the-badge&logoColor=white)
 
 ## Problem:
 
