@@ -124,7 +124,7 @@
 </li><li>
   <a href="arrays/remove-element">
     Remove Element
-  </a> - Medium
+  </a> - Easy
 </li><li>
   <a href="arrays/search-in-rotated-array">
     Search In Rotated Array
