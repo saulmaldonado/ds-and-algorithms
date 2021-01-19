@@ -31,7 +31,7 @@ class PullRequest:
 
 
 class Version:
-    def __init__(self, release_endpoint):
+    def __init__(self):
         self.__get_recent_tag()
 
     def __get_recent_tag(self):
@@ -41,8 +41,8 @@ class Version:
 
         if len(releases) == 0:
             recent_tag = "v0.0.0"
-
-        recent_tag = releases[0].tag_name
+        else:
+            recent_tag = releases[0]["tag_name"]
 
         match = re.match("v([\d]+)\.([\d]+)", recent_tag)
 
