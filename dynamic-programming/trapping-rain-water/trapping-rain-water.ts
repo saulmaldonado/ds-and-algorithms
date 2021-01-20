@@ -19,3 +19,38 @@ function trap(height: number[]): number {
   }
   return ans;
 }
+
+function trap2(height: number[]): number {
+  if (height.length < 3) {
+    return 0;
+  }
+
+  let i: number = 0;
+  let j: number = height.length - 1;
+
+  let iMax: number = 0;
+  let jMax: number = 0;
+
+  let ans: number = 0;
+
+  while (i < j) {
+    if (height[i] < height[j]) {
+      if (height[i] > iMax) {
+        iMax = height[i];
+      } else {
+        let diff: number = iMax > height[i] ? iMax - height[i] : 0;
+        ans += diff;
+      }
+      i++;
+    } else {
+      if (height[j] > jMax) {
+        jMax = height[j];
+      } else {
+        let diff: number = jMax > height[j] ? jMax - height[j] : 0;
+        ans += diff;
+      }
+      j--;
+    }
+  }
+  return ans;
+}
