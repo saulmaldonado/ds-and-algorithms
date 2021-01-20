@@ -84,10 +84,9 @@ The last method is based of the same idea, but does not ultilize a seperate arra
 
 1. Initialize two pointers, `i` and `j` at each end of the array
 2. Initialize two vairables that will hold the max height we've found with each pointer
-3. Compare both values at the indices, take the smaller of the two and compare it with the running max, if it is greater update the max
-4. Take the difference between max for that pointer and the current value and add to the running total (if it is positive)
-5. Move the pointer towards the center
-6. Repeats the operations until both pointers meet
+3. Compare both values at the indices, take the smaller of the two and compare it with the running max for that pointer, if it is greater update the max for that pointer. If it is not take the difference between the value and the max for that pointer and add to ans (if positive)
+4. Move the pointer towards the center
+5. Repeats the operations until both pointers meet
 
 - [JavaScript](./trapping-rain-water.js)
 - [TypeScript](./trapping-rain-water.ts)
