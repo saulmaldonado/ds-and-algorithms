@@ -33,3 +33,44 @@ func trap(height []int) int {
 	}
 	return ans
 }
+
+func trap2(height []int) int {
+	if len(height) < 3 {
+		return 0
+	}
+
+	i := 0
+	j := len(height) - 1
+
+	iMax := 0
+	jMax := 0
+
+	ans := 0
+
+	for i < j {
+		if height[i] < height[j] {
+			if height[i] > iMax {
+				iMax = height[i]
+			} else {
+				diff := 0
+				if iMax > height[i] {
+					diff = iMax - height[i]
+				}
+				ans += diff
+			}
+			i++
+		} else {
+			if height[j] > jMax {
+				jMax = height[j]
+			} else {
+				diff := 0
+				if jMax > height[j] {
+					diff = jMax - height[j]
+				}
+				ans += diff
+			}
+			j--
+		}
+	}
+	return ans
+}
