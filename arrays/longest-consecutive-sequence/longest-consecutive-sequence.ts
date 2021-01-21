@@ -20,3 +20,28 @@ function longestConsecutive(nums: number[]): number {
 
   return max;
 }
+
+// Set
+function longestConsecutive(nums: number[]): number {
+  if (!nums.length) return 0;
+
+  const set: Set<number> = new Set(nums);
+
+  let max: number = 0;
+  let maxSeq: number = 1;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (!set.has(nums[i] - 1)) {
+      let num: number = nums[i];
+
+      while (set.has(num + 1)) {
+        maxSeq++;
+        num++;
+      }
+      max = Math.max(max, maxSeq);
+      maxSeq = 1;
+    }
+  }
+  max = Math.max(max, maxSeq);
+  return max;
+}
