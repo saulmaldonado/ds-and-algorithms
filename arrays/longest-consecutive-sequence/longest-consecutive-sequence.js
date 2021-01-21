@@ -24,3 +24,29 @@ function longestConsecutive(nums) {
 
   return max;
 }
+
+
+// Set
+function longestConsecutive(nums) {
+  if (!nums.length) return 0;
+
+  const set = new Set(...nums);
+
+  let max = 0;
+  let maxSeq = 1;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (!set.has(nums[i] - 1)) {
+      let num = nums[i];
+
+      while (set.has(num + 1)) {
+        maxSeq++;
+        num++;
+      }
+      max = Math.max(max, maxSeq);
+      maxSeq = 1;
+    }
+  }
+  max = Math.max(max, maxSeq);
+  return max;
+}
