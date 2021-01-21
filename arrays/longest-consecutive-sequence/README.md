@@ -51,6 +51,15 @@ max sequence if of length 9
 Time: O(n log n)
 Space: O(1)
 
+#### Set
+
+Since it's safe to ignore duplicates, we can convert the array into a set, letting us take advantage of `O(1)` lookup.
+
+After making a set out of the array, we can again iterate over the array and find sequences where `num[i]` is the smallest number in a sequence (we check this by checking if `nums[i] - 1` is in the set) walk down the set, checking if the next number of the sequence `num[i] + 1` is in the array. We'll take the max length of all sequences we find and return it
+
+Time: O(n)
+Space: O(n)
+
 - [JavaScript](./longest-consecutive-sequence.js)
 - [TypeScript](./longest-consecutive-sequence.ts)
 - [Java](./longest-consecutive-sequence.java)
