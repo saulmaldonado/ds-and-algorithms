@@ -1,4 +1,4 @@
-from urllib.request import urlopen, Request
+from urllib.request import urlopen, Request, HTTPError
 import os
 import json
 import re
@@ -11,13 +11,29 @@ release_endpoint = (
 
 
 class PullRequest:
-    def __init__(self, event_path):
-        with open(event_path) as fp:
-            self.event = json.load(fp)
-            self.type, self.title = self.__get_ref()
+    def __init__(self):
+        self.event_path = event_path
+        self.event = self.__get_event_payload()
+        self.type, self.title, self.number = self.__get_ref()
+        self.path = self.__get_path(self.number)
+
+    def __get_event_payload(self):
+        with open(self.event_path) as fp:
+            return json.load(fp)
+
+    def __get_path(self, pr_number):
+        file_endpoint = f"https://api.github.com/repos/saulmaldonado/ds-and-algorithms/pulls/{pr_number}/files"
+
+        filename = json.load(urlopen(file_endpoint))[0]["filename"]
+        match = re.match(r"([\w\-]+)\/([\w\-]+)\/(README.md)", filename)
+
+        if match == None:
+            return None
+        return f"{match.group(1)}/{match.group(2)}"
 
     def __get_ref(self) -> str:
         ref = self.event["pull_request"]["head"]["ref"]
+        number = self.event["number"]
         match = re.match("(feat|fix)\/(.+)", ref)
         if match == None:
             raise Exception(
@@ -27,14 +43,14 @@ class PullRequest:
         title = re.sub("-", " ", match.group(2))
         title = re.sub(r"\b\w", lambda match: match.group(0).upper(), title)
 
-        return (match.group(1), title)
+        return (match.group(1), title, number)
 
 
 class Version:
     def __init__(self):
         self.__get_recent_tag()
 
-    def __get_recent_tag(self):
+    def __get_recent_tag(self, release_endpoint):
         recent_tag = ""
 
         releases = json.load(urlopen(release_endpoint))
@@ -66,30 +82,43 @@ class Version:
 
 
 class Release:
-    def __init__(self):
-        pr = PullRequest(event_path)
-        v = Version()
+    def __init__(self, release_endpoint):
+        pr = PullRequest()
+        v = Version(release_endpoint)
         v.bump_to_next(pr)
+
         self.tag_name = v.get_tag()
         self.name = pr.title
+        self.body = self.get_body(pr.path)
 
-    def to_payload(self):
-        return json.dumps({"tag_name": self.tag_name, "name": self.name})
+    def get_payload(self):
+        return json.dumps(
+            {"tag_name": self.tag_name, "name": self.name, "body": self.body}
+        )
+
+    def get_body(self, path):
+        if self.path == None:
+            return None
+        return f"[{self.name}](https://github.com/saulmaldonado/ds-and-algorithms/tree/main/{self.path})"
 
     def new_release(self):
         req = Request(
             release_endpoint,
-            self.to_payload().encode("utf-8"),
+            self.get_payload().encode("utf-8"),
             {
                 "Authorization": "Bearer " + token,
                 "Accept": "application/vnd.github.v3+json",
                 "Content-Type": "application/json",
             },
         )
-        res = json.load(urlopen(req))
-        print(res)
+
+        try:
+            res = urlopen(req)
+            print("{} {}".format(res.reason, res.code))
+        except HTTPError as err:
+            print("{} {}".format(err.reason, err.code))
 
 
 if __name__ == "__main__":
-    release = Release()
+    release = Release(release_endpoint)
     release.new_release()
