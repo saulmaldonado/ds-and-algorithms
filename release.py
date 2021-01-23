@@ -34,7 +34,7 @@ class PullRequest:
     def __get_ref(self) -> str:
         ref = self.event["pull_request"]["head"]["ref"]
         number = self.event["number"]
-        match = re.match("(feat|fix)\/(.+)", ref)
+        match = re.match(r"(feat|fix)\/(.+)", ref)
         if match == None:
             raise Exception(
                 "Pull request ref does not match convention, (feat|fix)/(branch name)"
@@ -47,8 +47,8 @@ class PullRequest:
 
 
 class Version:
-    def __init__(self):
-        self.__get_recent_tag()
+    def __init__(self, release_endpoint):
+        self.__get_recent_tag(release_endpoint)
 
     def __get_recent_tag(self, release_endpoint):
         recent_tag = ""
@@ -60,7 +60,7 @@ class Version:
         else:
             recent_tag = releases[0]["tag_name"]
 
-        match = re.match("v([\d]+)\.([\d]+)", recent_tag)
+        match = re.match(r"v([\d]+)\.([\d]+)", recent_tag)
 
         self.major = int(match.group(1))
         self.minor = int(match.group(2))
@@ -97,9 +97,9 @@ class Release:
         )
 
     def get_body(self, path):
-        if self.path == None:
+        if path == None:
             return None
-        return f"[{self.name}](https://github.com/saulmaldonado/ds-and-algorithms/tree/main/{self.path})"
+        return f"[{self.name}](https://github.com/saulmaldonado/ds-and-algorithms/tree/main/{path})"
 
     def new_release(self):
         req = Request(
