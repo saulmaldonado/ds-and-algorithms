@@ -21,6 +21,7 @@ jobs:
           git add .
           git commit -m 'chore: Update README with new problem'
           git push origin HEAD:main
+        continue-on-error: true
 
       - name: Create new release
         run: |
