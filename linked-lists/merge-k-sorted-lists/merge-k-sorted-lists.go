@@ -24,6 +24,24 @@ func mergeKLists(lists []*ListNode) *ListNode {
 	return lists[0]
 }
 
+// divide and conquer
+func mergeKLists2(lists []*ListNode) *ListNode {
+	if len(lists) == 0 {
+		return nil
+	}
+
+	interval := 1
+
+	for interval < len(lists) {
+		for i := 0; i+interval < len(lists); i += interval * 2 {
+			lists[i] = merge(lists[i], lists[i+interval])
+		}
+		interval *= 2
+	}
+
+	return lists[0]
+}
+
 func merge(a *ListNode, b *ListNode) *ListNode {
 	dummy := &ListNode{}
 	currentNode := dummy
