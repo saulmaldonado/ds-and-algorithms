@@ -58,14 +58,36 @@ Output: []
 
 `The sum of lists[i].length won't exceed 10^4.`
 
-<!-- <details> -->
-  <!-- <summary>Solutions (Click to expand)</summary> -->
-
 ### Explanation
 
-For one simple valid solution, we can compare and merge lists one by one into a main lists until all lists have been merged. This will cost us `O(kN)` where `k` is the number of lists and `N` is the number of comparison and merging operations. This can also only cost us `O(1)` since we can merge all lists into the first list instead of creating a new list. This is the easiest solution for JavaScript, TypeScript and Go solutions since there is no Priority Queue implementation for those languages.
+#### Merge One by One
 
-For a more advanced and efficient solution we can use a Priority Queue of size `k` that will initially take the head nodes of all lists. For our comparator, we will compare the values of each node. This will "bubble up" the least of the node to the front of the queue for us to pop and insert in our result list. We can then insert the `next` node of the popped node in the queue to heapify once again.
+The simplest solution would be to iterate over the lists one by one and merge them in a main list that will hold the final merge list
+
+```
+[1->4->5]
+
+[
+  1->3->4,
+  2->6
+]
+
+[1->1->3->4->4->5]
+
+[
+  2->6
+]
+
+[1->1->2->3->4->4->5->6]
+
+[]
+```
+
+This will cost us `O(kN)` where `k` is the number of lists and `N` is the number of comparison and merging operations. This can also only cost us `O(1)` since we can merge all lists into the first list instead of creating a new list.
+
+#### Min Heap
+
+We can use a Priority Queue of size `k` that will initially take the head nodes of all lists. For our comparator, we will compare the values of each node. This will "bubble up" the least of the node to the front of the queue for us to pop and insert in our result list. We can then insert the `next` node of the popped node in the queue to heapify once again.
 
 ```
 
@@ -110,8 +132,15 @@ Input: lists = [[1,4,5],[1,3,4],[2,6]]
 result = [1 1 2 3 4 4 5 6]
 ```
 
+#### Iterative Divide and Conquer
+
+Our main problem with the Merge One by One solution, is how may comparisons we have to make for every single list we want to merge into the bigger list. It can take up to `O(N)` comparisons, with `N` being the total number of nodes among all lists, for `k` lists in `lists` totaling up to `O(k * n)`
+
+![Solution 3](./images/solution-3.png)
+
+We can reduce the total comparisons by merging lists by pairs instead of into one list. Merging lists into pairs costs `K/2 * ((N/K) * 2)` or `O(N)` for our first round of pairs, We can then merge the resulting lists into pair and so on until we reach a final single list. At every level, we are making `O(N)` comparisons and doing that `O(log k)` times (halving the number of lists we compare at every level), Total amount of operations would end up being `O(N log k)` where `k` is number of lists and `N` is the total number of nodes.
+
 - [JavaScript](./merge-k-sorted-lists.js)
 - [TypeScript](./merge-k-sorted-lists.ts)
 - [Java](./merge-k-sorted-lists.java)
 - [Go](./merge-k-sorted-lists.go)
-<!-- </details> -->
