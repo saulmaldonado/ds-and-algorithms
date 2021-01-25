@@ -22,6 +22,23 @@ function mergeKLists(lists) {
   return lists[0];
 }
 
+// divide and conquer
+function mergeKLists2(lists) {
+  if (lists.length === 0) {
+    return null;
+  }
+
+  let interval = 1;
+
+  while (interval < lists.length) {
+    for (let i = 0; i + interval < lists.length; i += interval * 2) {
+      lists[i] = merge(lists[i], lists[i + interval]);
+    }
+    interval *= 2;
+  }
+  return lists[0];
+}
+
 function merge(a, b) {
   const dummy = new ListNode(0);
   let currentNode = dummy;
