@@ -103,6 +103,24 @@ i - prev -  1 = 1
 1 < k // array is not valid return false
 ```
 
+#### Bit Manipulation
+
+We can convert an array of `1`s and `0`s to an integer. Using bit shifting, we can iterate over the bits of the integer and count how many `0`s we find between `0`s
+
+```
+k = 2
+
+count = 0
+100101 >>
+
+count = 1
+10010 >>
+
+count = 1
+1001 >>
+1 < k // count is less than k, return false
+```
+
 - [JavaScript](./check-if-all-1s-are-at-least-length-k-places-away.js)
 - [TypeScript](./check-if-all-1s-are-at-least-length-k-places-away.ts)
 - [Java](./check-if-all-1s-are-at-least-length-k-places-away.java)
