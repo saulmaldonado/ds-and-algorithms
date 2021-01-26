@@ -35,3 +35,34 @@ func isMatch(s string, p string) bool {
 
 	return dp[S-1][P-1]
 }
+
+func isMatch2(s string, p string) bool {
+	i := 0
+	j := 0
+	prevI := 0
+	prevJ := -1
+
+	for i < len(s) {
+		if j < len(p) && (p[j] == '?' || s[i] == p[j]) {
+			i++
+			j++
+		} else if j < len(p) && p[j] == '*' {
+			prevJ = j
+			prevI = i
+			j++
+		} else if prevJ != -1 {
+			prevI++
+			i = prevI
+
+			j = prevJ + 1
+		} else {
+			return false
+		}
+	}
+
+	for j < len(p) && p[j] == '*' {
+		j++
+	}
+
+	return j == len(p)
+}
