@@ -28,3 +28,33 @@ function isMatch(s: string, p: string): boolean {
 
   return dp[S - 1][P - 1];
 }
+
+function isMatch2(s: string, p: string): boolean {
+  let i: number = 0;
+  let j: number = 0;
+  let prevI: number = 0;
+  let prevJ: number = -1;
+
+  while (i < s.length) {
+    if (j < p.length && (p[j] === '?' || s[i] === p[j])) {
+      i++;
+      j++;
+    } else if (j < p.length && p[j] === '*') {
+      prevJ = j;
+      prevI = i;
+      j++;
+    } else if (prevJ !== -1) {
+      prevI++;
+      i = prevI;
+
+      j = prevJ;
+    } else {
+      return false;
+    }
+  }
+  while (j < p.length && p[j] === '*') {
+    j++;
+  }
+
+  return j === p.length;
+}
