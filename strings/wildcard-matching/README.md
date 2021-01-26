@@ -123,6 +123,42 @@ Space: `O(S*P)`
 
 S and P being the lengths of strings `s` and `p`
 
+#### Two pointer backtracking
+
+This solution revolves around taking a greedy approach, with greedy meaning `*`s will match little characters as possible. This means whenever we encounter `*` we will always move `p` pointer by itself, indicating that no characters were matched in `s` with `*`
+
+```
+*a*b
+^
+acdcb
+^
+// move p
+
+*a*b
+ ^
+acdcb
+^
+// a and a match move both
+
+*a*b
+  ^
+acdcb
+ ^
+// move p
+
+*a*b
+   ^
+acdcb
+ ^
+// no match
+```
+
+If we ever come a point where we don't have a match in characters after a `*`, we'll want the `*` to match or "eat up" characters. To do this we'll need a reference to the position of the last `*` and the position in `s` where a character and `*` were compared. we'll backtrack both our indices and this time increment our `s` pointer by one. This indicates that a character was matched with `*`. The comparisons and backtracking will continue until we reach the end of both `s` and `p` or the end of `s` where the rest of characters in `p` are all `*`
+
+time: worst case O(S\*P)
+
+space: O(1)
+
 - [JavaScript](./wildcard-matching.js)
 - [TypeScript](./wildcard-matching.ts)
 - [Java](./wildcard-matching.java)
