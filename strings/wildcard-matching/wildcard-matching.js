@@ -33,3 +33,33 @@ function isMatch(s, p) {
 
   return dp[S - 1][P - 1];
 }
+
+function isMatch2(s, p) {
+  let i = 0;
+  let j = 0;
+  let prevI = 0;
+  let prevJ = -1;
+
+  while (i < s.length) {
+    if (j < p.length && (p[j] === '?' || s[i] === p[j])) {
+      i++;
+      j++;
+    } else if (j < p.length && p[j] === '*') {
+      prevJ = j;
+      prevI = i;
+      j++;
+    } else if (prevJ !== -1) {
+      prevI++;
+      i = prevI;
+
+      j = prevJ;
+    } else {
+      return false;
+    }
+  }
+  while (j < p.length && p[j] === '*') {
+    j++;
+  }
+
+  return j === p.length;
+}
