@@ -53,7 +53,7 @@ We can find the only number in the array that only appears once by using a hash 
 
 {
   1: 2,
-  2: 1,
+  2: 2,
   4: 1
 }
 
@@ -62,7 +62,7 @@ We can find the only number in the array that only appears once by using a hash 
 
 #### XOR Operator
 
-Making the following observations based on the XOR operator leads us to use it in a solution
+Making the following observations of the XOR operator leads us to use it for a solution
 
 1. `x ^ 0 = 0`
 
@@ -90,11 +90,7 @@ If we know that `x ^ x = 0`, we know that the result of using the XOR operator o
 If there is a number in the array without a duplicate, the number will be the only non-zero number in the array
 
 ```
-[1,1,2,2,3]
-[1^1 ^ 2^2 ^ 3]
-[0 ^ 0 ^ 3]
-
-3
+[1,1,2,2,3] = [1^1 ^ 2^2 ^ 3] = [0 ^ 0 ^ 3] = 3
 ```
 
 Since XOR is commutative, we can rearrange order of the arguments and still get the same result
@@ -102,14 +98,14 @@ Since XOR is commutative, we can rearrange order of the arguments and still get 
 ```
 [1,3,2,1,2,1]
 
-[1^3^2^1^2^1] = [1^1 ^ 2^2 ^ 3] = 3
+[1^3^2^1^2^1] = [1^1 ^ 2^2 ^ 3]  = [0 ^ 0 ^ 3] = 3
 ```
 
 For an `O(N)` solution, we use the XOR operator on every number in the array and the result will be the only single number
 
-Space: `O(N)`
+Space: `O(1)`
 
-Time: ``O(1)
+Time: `O(N)`
 
 - [JavaScript](./single-number.js)
 - [TypeScript](./single-number.ts)
