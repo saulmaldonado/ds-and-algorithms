@@ -99,7 +99,7 @@ class Release:
 
     def get_body(self, path):
         if path == None:
-            return None
+            return ""
         return f"[{self.name}](https://github.com/saulmaldonado/ds-and-algorithms/tree/main/{path})"
 
     def new_release(self):
