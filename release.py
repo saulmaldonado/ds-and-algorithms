@@ -67,6 +67,7 @@ class Version:
 
     def bump_major(self):
         self.major += 1
+        self.minor = 0
 
     def bump_minor(self):
         self.minor += 1
