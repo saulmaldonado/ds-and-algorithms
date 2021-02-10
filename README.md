@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-84-blue)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-85-blue)
 <a href="https://www.buymeacoffee.com/saulmaldonado" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 > Data structures and algorithm problems with solution explanations and implementations for different languages
@@ -79,6 +79,10 @@
   <summary>Linked Lists</summary>
     <ul>
       <li>
+  <a href="linked-lists/copy-list-with-random-pointer">
+    Copy List With Random Pointer
+  </a> - Medium
+</li><li>
   <a href="linked-lists/merge-two-sorted-lists">
     Merge Two Sorted Lists
   </a> - Easy
