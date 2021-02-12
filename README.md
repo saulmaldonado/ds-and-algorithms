@@ -3,7 +3,7 @@
 ![repo stars](https://img.shields.io/github/stars/saulmaldonado/ds-and-algorithms?style=social)
 ![github followers](https://img.shields.io/github/followers/saulmaldonado?style=social)
 ![time since last commit](https://img.shields.io/github/last-commit/saulmaldonado/ds-and-algorithms)
-![number of problems](https://img.shields.io/badge/no.%20of%20problems-90-blue)
+![number of problems](https://img.shields.io/badge/no.%20of%20problems-91-blue)
 <a href="https://www.buymeacoffee.com/saulmaldonado" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 > Data structures and algorithm problems with solution explanations and implementations for different languages
@@ -188,6 +188,10 @@
   <summary>Bit Manipulation</summary>
     <ul>
       <li>
+  <a href="bit-manipulation/number-of-steps-to-reduce-a-number-to-zero">
+    Number Of Steps To Reduce A Number To Zero
+  </a> - Easy
+</li><li>
   <a href="bit-manipulation/single-number">
     Single Number
   </a> - Easy
