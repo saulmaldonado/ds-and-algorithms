@@ -89,9 +89,9 @@ Time: `O(N!)` Where `N` is the number of queens
 
 Space: `O(N*N)` A grid of `N*N` spaces to build boards
 
-- [JavaScript](./q-queens.js)
-- [TypeScript](./q-queens.ts)
-- [Java](./q-queens.java)
-- [Go](./q-queens.go)
+- [JavaScript](./n-queens.js)
+- [TypeScript](./n-queens.ts)
+- [Java](./n-queens.java)
+- [Go](./n-queens.go)
 
 </details>
