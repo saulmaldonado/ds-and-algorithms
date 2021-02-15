@@ -275,8 +275,8 @@
     Permutations
   </a> - Medium
 </li><li>
-  <a href="backtracking/q-queens">
-    Q Queens
+  <a href="backtracking/n-queens">
+    N Queens
   </a> - Hard
 </li><li>
   <a href="backtracking/combination-sum-ii">
