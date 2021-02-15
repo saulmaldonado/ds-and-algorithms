@@ -39,7 +39,7 @@ class PullRequest:
 
         for filename in filenames:
             match = re.match(
-                r"(?P<topic>[\w]+)\/(?P<name>[\w!-)\-]+)\/(?P<filename>README\.md|\2(?:\.js|\.ts|\.go|\.java))",
+                r"(?P<topic>[\w!-)\-]+)\/(?P<name>[\w!-)\-]+)\/(?P<filename>README\.md|\2(?:\.js|\.ts|\.go|\.java))",
                 filename,
             )
             if match is not None:
