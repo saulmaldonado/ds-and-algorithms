@@ -51,24 +51,34 @@ exection -> execution (insert 'u')
 
 #### Dynamic Programming
 
-We can make the problem easier by breaking it down into smaller sub problems. Staring with two empty strings `word1 = "", word2 = ""` we can find the minimum number of operations to get `word1` to `word2` by exploring our options
+We can make the problem easier by breaking it down into smaller sub problems. Staring with two empty strings `word1 = "", word2 = ""` we know that both strings are the same and require 0 operations. We can say that the minimum operations needed to transform `word1.substring(0,0)` to `word2.substring(0,0)` is 0
+
+we can find the minimum number of operations to get `word1` to `word2` by comparing our options
 
 ```
 word1 = "horse", word2 = "ros"
 
 "", "" // strings are the same, 0 operations
 
+"h", "" // remove h, 1 operation
 
+"", "r" // add r, 1 operation
 
-"h", "r" // replace "h" with "r"
+// find the min operations needed to get "h" to "r"
 
-"h", "" // delete "h"
+"h", "r" // replace h with r, find the min operations for word1.substring(0, 0) to word2.substring(0, 0) and add one
 
-"", "r" // add "r"
+"", "r" // add r, find min operations from `word1.substring(0,1)` to `word2.substring(0,0)` ("h" to "") and add one
+
+"ro", "r"// remove o, find min operations from `word1.substring(0, 1)` to word.substring(0,2) ("h" to "ro") and add one
+
 ```
 
-We can use dynamic programming to store the minimum operations for these sub-problems. A 2D matrix would work here where `dp[i][j]` indicates the minimum operations to get `word1.substring(0, i)` to `word2.substring(0, j)`. If the last character of the to substrings are the same, then no operations are needed take the minimum for the previous operations. `dp[i - 1][j - 1]`.
-If the characters are not the same there, are three operations we can make:
+We can use dynamic programming to store the minimum operations for these sub-problems. A 2D matrix would work here where `dp[i][j]` indicates the minimum operations to get `word1.substring(0, i)` to `word2.substring(0, j)`.
+
+If the last character of the to substrings are the same, then no operations are needed take the minimum for the previous operations. the min operations is `dp[i - 1][j - 1]`.
+
+If the characters are not the same there, there are three operations we can make:
 
 1. replacement, take the min of `dp[i - 1][j - 1]` and add one
 2. removal, take the min of `dp[i - 1][j]` and add one
