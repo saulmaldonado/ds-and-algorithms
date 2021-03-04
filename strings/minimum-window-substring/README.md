@@ -1,10 +1,10 @@
-# # Title
+# Minimum Window Substring
 
 ## Difficulty
 
 ![Hard](https://img.shields.io/badge/hard-d9534f?style=for-the-badge&logoColor=white)
 
-## Problem:
+## Problem
 
 Given two strings s and t, return the minimum window in s which will contain all the characters in t. If there is no such window in s that covers all characters in t, return the empty string "".
 
