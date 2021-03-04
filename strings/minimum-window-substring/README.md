@@ -44,11 +44,89 @@ s = "ADOBECODEBANC", t = "ABC" // the entire string of s contains all of the cha
      ^  ^ ^
 ```
 
-If we know that `s` is a valid substring then `s.substring(0, s.length)` is the largest possible answer. If we want to return the smallest possible substring then we would have to search the string using a **_sliding window_**. `left` and `right` would indicate the boundaries of the substring where `right - left + 1` is the length of the substring and `s.substring(left, right + 1)` is the current substring of the window. If we want to ensure that all of the character of `t` are contained in `s.substring(left, right + 1)` then we would need a quick way to reference these characters. We could use a **_HashMap_** that represents the frequencies of the characters in `t`. This way validating a window with `t` would be as simple as checking that the frequencies of characters of `t` are included in the window.
+If we know that `s` is a valid substring then `s.substring(0, s.length)` is the largest possible answer. If we want to return the smallest possible substring then we would have to search the string using a **_sliding window_**. `left` and `right` would indicate the boundaries of the substring where `right - left + 1` is the length of the substring and `s.substring(left, right + 1)` is the current substring of the window.
 
-Instead of checking every substring we check check the frequencies of characters as we expand the window. For this strategy, we would increment our `right` pointer adding the characters at right `s[right]` to a separate frequency map. If at any point the unique character frequencies of the window are the same of `t`, then `s.substring(left, right + 1)` is a valid substring. We would record the length of the substring if it is less than the `minLen` were keeping track of.
+If we want to ensure that all of the character of `t` are contained in `s.substring(left, right + 1)` then we would need a quick way to reference these characters. We could use a **_HashMap_** that represents the frequencies of the characters in `t`. This way validating a window with `t` would be as simple as checking that the frequencies of characters of `t` are included in the window.
 
-To contract the window we would decrement the `left` pointer removing the character at pointer `left` from our local hashmap. If removing the character still makes the substring valid, then we would record the newer smaller window. If the substring becomes invalid, then we would continue incrementing `right` to add more characters to our window and make it valid again.
+```
+t = "ABC"
+{
+  A: 1
+  B: 1
+  C: 1
+}
+
+left = 0
+right = 5
+
+s.substring(left, right + 1) = "ADOBEC" // VALID substring
+
+{
+  A: 1 <-
+  D: 1
+  O: 1
+  B: 1 <-
+  E: 1
+  C: 1 <-
+}
+
+// here the window substring contains all of the characters frequencies of t
+```
+
+To check for valid substrings we would need to keep track of the window substring character frequencies.
+For this we would use a separate local hashmap.
+As we expand our window by incrementing `right` to include new characters, we would add the new character and update its frequency in the hashmap.
+As we contract our window by incrementing `left`, we would decrement the character frequency from our hashmap
+
+```
+left = 0
+right = 5
+"ADOBECODEBANC"
+ ^    ^
+
+ {
+  A: 1
+  D: 1
+  O: 1
+  B: 1
+  E: 1
+  C: 1
+}
+
+// expand our window by incrementing right
+
+left = 0
+right = 6
+
+"ADOBECODEBANC"
+ ^     ^
+  {
+  A: 1
+  D: 1
+  O: 2 <- O is incremented
+  B: 1
+  E: 1
+  C: 1
+}
+
+// contract our window by incrementing left
+
+left = 1
+right = 6
+
+"ADOBECODEBANC"
+  ^    ^
+  {
+  A: 0 <- A is decremented
+  D: 1
+  O: 2
+  B: 1
+  E: 1
+  C: 1
+}
+```
+
+As we find valid substring while expanding and contracting the window we would record the smallest length substring seen.
 
 By the end of traversing to the end of `s` and we can't contract the window anymore, then we have finished searching the string
 
