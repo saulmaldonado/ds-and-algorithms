@@ -10,7 +10,11 @@ Write a program to find the node at which the intersection of two singly linked 
 
 For example, the following two linked lists:
 
+![Example](./images/example-1.png)
+
 ### Example 1
+
+![Example 1](./images/example-2.png)
 
 ```
 Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3
@@ -20,6 +24,8 @@ Input Explanation: The intersected node's value is 8 (note that this must not be
 
 ### Example 2
 
+![Example 2](./images/example-3.png)
+
 ```
 Input: intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
 Output: Reference of the node with value = 2
@@ -27,6 +33,8 @@ Input Explanation: The intersected node's value is 2 (note that this must not be
 ```
 
 ### Example 3
+
+![Example 3](./images/example-4.png)
 
 ```
 Input: intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
