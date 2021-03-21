@@ -1,4 +1,4 @@
-# Title
+# Reordered Power of 2
 
 ## Difficulty
 
