@@ -8,7 +8,7 @@
 
 > Data structures and algorithm problems with solution explanations and implementations for different languages
 
-## 📊 Organized by topic:
+## 📊 Organized by topic
 
 <div>
   <ul>
@@ -25,7 +25,7 @@
 - 🐱 Github: [@saulmaldonado](https://github.com/saulmaldonado)
 - 🤝 LinkedIn: [@saulmaldonado4](https://www.linkedin.com/in/saulmaldonado4/)
 - 🐦 Twitter: [@saul_mal](https://twitter.com/saul_mal)
-- 💻 Website: [saulmaldonado.tech](https://saulmaldonado.tech/)
+- 💻 Website: [saulmaldonado.tech](https://saulmaldonado.com/)
 
 ## Show your support
 
