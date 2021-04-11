@@ -44,7 +44,7 @@ class Solution {
 
   }
 
-  private boolean canReplace(char[] T, int p, char[] S) {
+  private boolean canReplace(char[] t, int start, char[] s) {
     for (int i = 0; i < S.length; i++) {
       if (T[i + p] != '*' && T[i + p] != S[i]) {
         return false;
@@ -53,7 +53,7 @@ class Solution {
     return true;
   }
 
-  private int replace(char[] T, int start, int len, int count) {
+  private int replace(char[] t, int start, int len, int count) {
     for (int i = 0; i < len; i++) {
       if (T[i + start] != '*') {
         T[i + start] = '*';
