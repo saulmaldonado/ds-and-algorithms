@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 class Solution {
@@ -10,14 +11,14 @@ class Solution {
 
     List<Integer> res = new ArrayList<>();
 
-    boolean[] visited = new boolean[t.length];
+    boolean[] visited = new boolean[n];
     int count = 0;
 
-    while (count < t.length) {
+    while (count < n) {
       boolean replaced = false;
-      for (int i = 0; i <= t.length - s.length; i++) {
+      for (int i = 0; i <= n - m; i++) {
         if (!visited[i] && canReplace(t, i, s)) {
-          count = replace(t, i, s.length, count);
+          count = replace(t, i, m, count);
           replaced = true;
           visited[i] = true;
           res.add(i);
@@ -45,8 +46,8 @@ class Solution {
   }
 
   private boolean canReplace(char[] t, int start, char[] s) {
-    for (int i = 0; i < S.length; i++) {
-      if (T[i + p] != '*' && T[i + p] != S[i]) {
+    for (int i = 0; i < s.length; i++) {
+      if (t[i + start] != '?' && t[i + start] != s[i]) {
         return false;
       }
     }
@@ -55,8 +56,8 @@ class Solution {
 
   private int replace(char[] t, int start, int len, int count) {
     for (int i = 0; i < len; i++) {
-      if (T[i + start] != '*') {
-        T[i + start] = '*';
+      if (t[i + start] != '?') {
+        t[i + start] = '?';
         count++;
       }
     }
